@@ -1,7 +1,7 @@
 package hwLesson3.entities;
 
 public class Hero {
-    String name;
+    private String name;
 
     public Hero(String name) {
         this.name = name;
@@ -11,7 +11,7 @@ public class Hero {
         return name;
     }
 
-    public void attackEnemy(){
-        System.out.printf("%s атакует врага!", getName());
+    public void attackEnemy(int damage){
+        System.out.printf("%s атакует врага!\n", getName());
     }
 }

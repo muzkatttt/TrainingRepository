@@ -7,6 +7,6 @@ public class Archer extends Hero{
 
     @Override
     public void attackEnemy() {
-        System.out.printf("%s грозно атакует врага!", getName());
+        System.out.printf("%s грозно атакует врага!\n", getName());
     }
 }
