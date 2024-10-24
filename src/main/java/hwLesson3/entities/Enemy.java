@@ -2,7 +2,7 @@ package hwLesson3.entities;
 
 public class Enemy {
     private int health;
-    private int damage;
+    private int DAMAGE = 10;
 
     public Enemy(int health) {
         this.health = health;
