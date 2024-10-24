@@ -2,7 +2,6 @@ package hwLesson3.entities;
 
 public class Enemy {
     private int health;
-    private int DAMAGE = 10;
 
     public Enemy(int health) {
         this.health = health;
@@ -16,7 +15,9 @@ public class Enemy {
         this.health = health;
     }
     public int takeDamage(int damage){
-        return health - damage;
+        int result = getHealth() - damage;
+        System.out.printf("Враг получил удар %d, осталось здоровья %d.\n", damage, result);
+        return result;
     }
 
 

@@ -1,7 +1,7 @@
 package hwLesson3.entities;
 
 public abstract class Hero {
-    private String name;
+    private final String name;
 
 
     public Hero(String name) {
@@ -12,5 +12,5 @@ public abstract class Hero {
         return name;
     }
 
-    abstract int attackEnemy(int damage);
+    abstract int attackEnemy(Enemy enemy);
 }

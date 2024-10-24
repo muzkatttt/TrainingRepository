@@ -1,9 +1,6 @@
 package hwLesson3;
 
-import hwLesson3.entities.Archer;
-import hwLesson3.entities.Hero;
-import hwLesson3.entities.Mage;
-import hwLesson3.entities.Warrior;
+import hwLesson3.entities.*;
 
 public class TrainingGround {
     public static void main(String[] args) {
@@ -11,14 +8,18 @@ public class TrainingGround {
 //        Hero hero = new Hero("Добрыня Никитич");
 //        hero.attackEnemy(10);
 
+        Enemy enemy = new Enemy(100);
+
         Mage mage = new Mage("Маг");
-        mage.attackEnemy(100);
+        mage.attackEnemy(enemy);
 
         Warrior warrior = new Warrior("Воин");
-        warrior.attackEnemy(100);
+        warrior.attackEnemy(enemy);
 
         Archer archer = new Archer("Лучник");
-        archer.attackEnemy(200);
+        archer.attackEnemy(enemy);
+
+
 
     }
 }
