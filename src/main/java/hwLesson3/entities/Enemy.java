@@ -1,7 +1,9 @@
 package hwLesson3.entities;
 
-public class Enemy {
+public class Enemy implements Mortal{
     private int health;
+
+    private int MIN_HEALTH = 0;
 
     public Enemy(int health) {
         this.health = health;
@@ -20,5 +22,9 @@ public class Enemy {
         return result;
     }
 
+    @Override
+    public boolean isAlive() {
+        return getHealth()> MIN_HEALTH;
+    }
 
 }
