@@ -47,12 +47,17 @@ public class Gangster extends Enemy {
     public boolean isAlive() {
         return getHealth() > MIN_HEALH;
     }
-    public int attackHero(Hero hero) {
-        int resultOfAttack = hero.getHealth() - damage;
-        System.out.printf("%s нанес мне урон %d. Осталось здоровья %s\n", hero.getName(), damage, resultOfAttack);
-        return hero.takeDamage(damage);
-    }
 
+    public int attackHero(Hero hero) {
+        if (hero.isAlive()) {
+            int resultOfAttack = hero.getHealth() - damage;
+            System.out.printf("%s нанес мне урон %d. Осталось здоровья %s\n", hero.getName(), damage, resultOfAttack);
+            return hero.takeDamage(damage);
+        } else {
+            System.out.println("Герой повержен");
+        }
+        return MIN_HEALH;
+    }
 }
 //public int attackEnemy(Enemy enemy) {
 //        int resultOfAttack = enemy.getHealth() - damage;

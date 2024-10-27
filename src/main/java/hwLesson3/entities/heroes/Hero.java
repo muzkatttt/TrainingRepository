@@ -27,6 +27,9 @@ public abstract class Hero implements Mortal {
         return health;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
 
     public int attackEnemy(Enemy enemy){
         return enemy.takeDamage(this.damage);

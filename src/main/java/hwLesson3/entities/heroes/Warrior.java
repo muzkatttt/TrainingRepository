@@ -26,11 +26,15 @@ public class Warrior extends Hero implements Mortal {
 
     @Override
     public int attackEnemy(Enemy enemy) {
-        int resultOfAttack = enemy.getHealth() - damage;
-        System.out.printf("Я пошел в атаку! Нанес урон врагу %d. Осталось здоровья у врага %s\n", damage,
-                resultOfAttack);
-        return resultOfAttack;
-
+        if (enemy.isAlive()) {
+            int resultOfAttack = enemy.getHealth() - damage;
+            System.out.printf("Я пошел в атаку! Нанес урон врагу %d. Осталось здоровья у врага %s\n", damage,
+                    resultOfAttack);
+            return resultOfAttack;
+        } else {
+            System.out.println("Враг повержен");
+        }
+    return MIN_HEALH;
     }
 
 //    public int takeDamage() {
