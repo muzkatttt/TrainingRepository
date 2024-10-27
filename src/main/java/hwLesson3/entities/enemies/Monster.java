@@ -1,7 +1,7 @@
-package hwLesson3.entities;
+package hwLesson3.entities.enemies;
 
-public class Zombie extends Enemy{
-    public Zombie(int health) {
+public class Monster extends Enemy {
+    public Monster(int health) {
         super(health);
     }
 
@@ -14,4 +14,6 @@ public class Zombie extends Enemy{
     public boolean isAlive() {
         return super.isAlive();
     }
+
+
 }
