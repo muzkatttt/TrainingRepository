@@ -2,6 +2,8 @@ package streamApi;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.IntUnaryOperator;
+import java.util.function.UnaryOperator;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -70,6 +72,15 @@ public class StreamApi {
                 System.out.println(intValue);
             }
         }
+
+        List<String> newList = List.of("1", "8", "2", "3", "9", "9", "7", "6", "5");
+
+                newList.stream()
+                        .map(str -> str + str)
+                .map(Integer::valueOf) //
+                        .mapToInt(Integer::intValue)// значения Integer
+        .summaryStatistics();
+        System.out.println(newList);
         // стрим для работы с int
         list.stream().map(str -> str + str)
                 .map(Integer::valueOf) // значения Integer
@@ -80,6 +91,21 @@ public class StreamApi {
         IntStream.of(1, 2, 4, 6, 7, 8, 8, 8, 8, 9)
                 //.peek(System.out::println)
                 .filter(x -> x % 2 == 0)
+                .forEach(System.out::println);
+
+        IntStream.range(5, 10)
+                        .forEach(System.out::println);
+
+        IntStream.iterate(3, new IntUnaryOperator() { // анонимный класс
+            @Override
+            public int applyAsInt(int operand) { // вместо new IntUnaryOperator() можно написать через лямбду
+                // x -> x + 3
+                return operand +3;
+            }
+        })
+                .skip(2)
+                .filter(x -> x % 2 ==0) // выведет значения от 12 до 66 с шагом 6, первые два пропустит
+                .limit(10) // выведет 10 значений
                 .forEach(System.out::println);
 
         DoubleStream.of(19.0, 20.0, 220000.0)
