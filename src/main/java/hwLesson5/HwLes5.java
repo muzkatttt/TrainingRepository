@@ -1,12 +1,10 @@
 package hwLesson5;
 
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class HwLes5 {
-    public static void main(String[] args) {
-//        LinkedListCatsCollection cats = new LinkedListCatsCollection<>();
+    public static void main(String[] args) throws NoSuchMethodException {
+//        LinkedListCatsCollection<String> cats = new LinkedListCatsCollection<>(5);
 //        cats.add("cat Karamel`ka");
 //        cats.add("cat Barny");
 //        cats.add("cat Kotofey");
@@ -17,31 +15,48 @@ public class HwLes5 {
 //        System.out.println(cats.showAll());
 //
 //        cats.remove("cat Barny");
-//        System.out.println(cats.showAll());
+//        cats.showAll();
 
 
-        MyCollection<String> list = new MyCollection<>();
+        MyCollection<String> list = new MyCollection<>(5);
         list.add("Karamel`ka");
         list.add("Barny");
         list.add("Kotofey");
         list.add("Pel`meshka");
         list.add("Rysya");
 
-        System.out.printf("Список:%s", list);
+        System.out.printf("Список:%s\n", list);
         System.out.println(list.get(0));
         list.remove(0);
         System.out.println(list);
 
-        MyCollection<String> copyList = new MyCollection<>();
+        MyCollection<String> copyList = new MyCollection<>(2);
         copyList.add("Cat3");
-        copyList.add("Another cat");
+        copyList.add("Another");
         copyList.addAll(list);
         ArrayList<String> array = new ArrayList<>();
-        array.add("8sdf");
-        array.add("hjkoljhgb");
-        array.add("17");
-        System.out.println(copyList);
-        //MyCollection.bubbleSort(array);
+        array.add("Busya");
+        array.add("Pushok");
+        array.add("Cat4");
+
+        System.out.println(array);
+        copyList.showAll();
+
+        MyInterface.bubbleSort(copyList);
+        copyList.showAll();
+
+        MyCollection<Integer> intList = new MyCollection<>(5);
+        intList.add(1);
+        intList.add(6);
+        intList.add(32);
+        intList.add(4);
+        intList.add(7);
+        intList.showAll();
+        intList.sort();
+        intList.showAll();
+        intList.showAll();
+        MyInterface.bubbleSort(intList);
+        intList.showAll();
 
     }
 }

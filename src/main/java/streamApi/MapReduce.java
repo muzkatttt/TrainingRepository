@@ -1,9 +1,7 @@
 package streamApi;
 
 import hwLesson3.entities.heroes.Archer;
-
 import java.util.IntSummaryStatistics;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MapReduce {
@@ -29,7 +27,6 @@ public class MapReduce {
                 //.forEach(System.out::println);
                 .ifPresent(System.out::println); // заменяет forEach - для одного значения
 
-
         final IntSummaryStatistics intSummaryStatistics = Stream.of(
                         new Archer("Archer0", 50),
                         new Archer("Archer1", 100),
@@ -44,10 +41,7 @@ public class MapReduce {
                 .map(Archer::getHealth)
                 .mapToInt(Integer::shortValue)
                 .summaryStatistics();
-
         System.out.println(intSummaryStatistics);
-
     }
-
 
 }
