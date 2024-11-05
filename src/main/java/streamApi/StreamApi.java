@@ -1,9 +1,7 @@
 package streamApi;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.IntUnaryOperator;
-import java.util.function.UnaryOperator;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
