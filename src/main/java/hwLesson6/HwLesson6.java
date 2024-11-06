@@ -20,12 +20,12 @@ public class HwLesson6 {
                 new Transaction(mario, 2012, 700),
                 new Transaction(alan, 2012, 950)
         );
-//        task1(transactions);
-//        task2(transactions);
-//        task3(transactions);
-//        task4(transactions);
-//        task5(transactions);
-//        task6(transactions);
+        task1(transactions);
+        task2(transactions);
+        task3(transactions);
+        task4(transactions);
+        task5(transactions);
+        task6(transactions);
         task7(transactions);
         task8(transactions);
     }
