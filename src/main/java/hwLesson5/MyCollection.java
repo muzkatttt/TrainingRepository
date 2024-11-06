@@ -43,6 +43,7 @@ public class MyCollection<T> implements MyInterface<T>, Sort<T> {
      * Метод, который "берет" нужный элемент
      * @param index индекс элемента
      * @return найденный элемент
+     *{@literal |x|} - как пример применения литералов для отображения в документации к методу
      */
     public T get(int index) {
         if (index < 0 || index >= size) {
