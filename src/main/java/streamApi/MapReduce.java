@@ -42,6 +42,13 @@ public class MapReduce {
                 .mapToInt(Integer::shortValue)
                 .summaryStatistics();
         System.out.println(intSummaryStatistics);
+
+        int [] array = new int[10];
+        int i = 0;
+        for(; i <10; i++){
+            if (array[i] % 2 == 0) continue;
+            System.out.println(i);
+        }
     }
 
 }
