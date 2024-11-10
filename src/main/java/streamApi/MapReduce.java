@@ -4,7 +4,7 @@ import hwLesson3.entities.heroes.Archer;
 import java.util.IntSummaryStatistics;
 import java.util.stream.Stream;
 
-public class MapReduce {
+public class MapReduce{
     public static void main(String[] args) {
         Stream.of(
                 new Archer("Archer0", 50),

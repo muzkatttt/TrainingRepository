@@ -1,31 +1,26 @@
 package threads;
 
-import java.util.HashSet;
+import streamApi.MapReduce;
+
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ThreadsRunner {
+public class ExecutorServiceRunner {
     public static void main(String[] args) {
-        ObservableSet<Integer> set = new ObservableSet<Integer>(
-                new HashSet<Integer>());
-        set.addObserver((s, e) -> System.out.println(e));
-        for (int i = 0; i < 100; i++)
-            set.add(i);
-
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        //запустить задачу на выполнение:
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                System.out.println("задача на выполнение");
+                for (int i = 0; i < 100; i++) {
+                    System.out.print("+");;
+                }
             }
         };
-        executor.execute(runnable);
-
         //корректно завершить службу исполнения иначе виртуальная машина не закроется
+        //executor.shutdown();
+        executor.execute(runnable);
         executor.shutdown();
-
     }
-
 }

@@ -1,8 +1,6 @@
 package collections;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ListRunner {
     public static void main(String[] args) {
@@ -68,5 +66,15 @@ public class ListRunner {
         for (String str : friends) {
             System.out.println(str.length());
         }
+
+        List<String> string1 = List.of("String", "String2", "Strint3");
+
+        List<String> list2 = Arrays.asList("String", "String2");
+
+        List<String> someList3 = new LinkedList<>(string1);
+
+        someList3.get(3);
+
+        int[] numbers = {2, 34, 434};
     }
 }

@@ -15,7 +15,6 @@ public class Fight {
             if (gangster.isAlive()) {
                 gangster.attackHero(warrior);
                 warrior.setHealth(warrior.getHealth());
-
             } else {
                 System.out.println("Game is over");
             }
