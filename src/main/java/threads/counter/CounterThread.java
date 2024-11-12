@@ -1,4 +1,6 @@
-package threads;
+package threads.counter;
+
+import threads.counter.Counter;
 
 public class CounterThread extends Thread{
     private final Counter counter;
@@ -9,7 +11,7 @@ public class CounterThread extends Thread{
 
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 400; i++) {
             counter.increment();
         }
     }
