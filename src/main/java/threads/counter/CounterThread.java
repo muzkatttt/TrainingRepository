@@ -1,6 +1,5 @@
 package threads.counter;
 
-import threads.counter.Counter;
 
 public class CounterThread extends Thread{
     private final Counter counter;

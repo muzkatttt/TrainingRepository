@@ -2,10 +2,10 @@ package threads.list;
 
 import java.util.List;
 
-public class ListThread extends Thread{
+public class ListThreads2 implements Runnable{
     private final List<Integer> list;
 
-    public ListThread(List<Integer> list) {
+    public ListThreads2(List<Integer> list) {
         this.list = list;
     }
 
