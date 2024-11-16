@@ -5,6 +5,7 @@ public class GenList <T>{
     private int size;
 
     public GenList(int startValue) {
+
         this.elements = (T[]) new Object[startValue];
     }
 

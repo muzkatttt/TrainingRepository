@@ -3,10 +3,11 @@ package serialization;
 import java.io.Serializable;
 
 public class Person implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L; // статики не считываются пр исериализации
+    // но присвоение номера при считывании обеспечивает проверку соответствия объекта
 
     private int age;
-    private String firstName;
+    private transient String firstName;
     private Client client;
 
     public Person(int age, String firstName) {
