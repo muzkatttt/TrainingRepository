@@ -7,7 +7,7 @@ public class ListRunner {
         List<String> friends = new ArrayList<>();
 
         List<String> list = List.of("Str", "Str2", "Str3");
-        list.add("");
+        //list.add(" ");
 
         // добавить элемент
         friends.add("");
@@ -76,5 +76,9 @@ public class ListRunner {
         someList3.get(3);
 
         int[] numbers = {2, 34, 434};
+        StringBuffer str = new StringBuffer();
+        str.append("Hello");
+        str.replace(5, 10, "World");
+        String result = str.toString();
     }
 }
