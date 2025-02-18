@@ -22,7 +22,6 @@ public class ThreadsRunner {
             }
         };
         executor.execute(runnable);
-
         //корректно завершить службу исполнения иначе виртуальная машина не закроется
         executor.shutdown();
 

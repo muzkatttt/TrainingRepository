@@ -2,7 +2,11 @@ package ru.aston.streamApi;
 
 import ru.aston.hwLesson3.entities.heroes.Archer;
 
+import java.util.Comparator;
 import java.util.IntSummaryStatistics;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MapReduce{
@@ -43,6 +47,19 @@ public class MapReduce{
                 .mapToInt(Integer::shortValue)
                 .summaryStatistics();
         System.out.println(intSummaryStatistics);
+
+        final List<Archer> archerName = Stream.of(
+                new Archer("Archer0", 50),
+                new Archer("Archer1", 100),
+                new Archer("Archer2", 150),
+                new Archer("Archer3", 50),
+                new Archer("Archer4", 60),
+                new Archer("Archer5", 80),
+                new Archer("Archer6", 90),
+                new Archer("Archer7", 40),
+                new Archer("Archer8", 200)
+        ).sorted(Comparator.comparing(Archer::getHealth)).collect(Collectors.toList());
+        System.out.println(archerName);
 
         int [] array = new int[10];
         int i = 0;

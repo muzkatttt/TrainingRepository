@@ -10,7 +10,6 @@ public class ThreadPoolDemo {
 //
 //        Executors.newScheduledThreadPool(3); // выполнять задачи с периодичностью либо с задержкой
 //        Executors.newWorkStealingPool(); // создает пул на основании ForkJoinPool из оптимального количества потоков
-
         ScheduledExecutorService threadPool = Executors.newScheduledThreadPool(4);
         threadPool.schedule(() -> System.out.println("Ok"), 3L,  TimeUnit.SECONDS);
         //threadPool.scheduleAtFixedRate(

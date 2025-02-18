@@ -19,7 +19,7 @@ public class BayerThread implements Runnable {
                     + " обслуживается в какой-то кассе");
             Thread.sleep(4L);
             System.out.println(Thread.currentThread().getName() +
-                    " освобождаю каую-то кассу ");
+                    " освобождаю кассу ");
             cashboxes.release();
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -1,6 +1,9 @@
 package ru.aston.threads.semaphore;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.Semaphore;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -17,23 +20,56 @@ public class CashboxRunner {
         Semaphore cashboxes = new Semaphore(2, true);
         // 2 -количество касс, true - обслуживать по очереди
 
-        List<Thread> threads = Stream.of(
-                new BayerThread(cashboxes),
-                new BayerThread(cashboxes),
-                new BayerThread(cashboxes),
-                new BayerThread(cashboxes),
-                new BayerThread(cashboxes),
-                new BayerThread(cashboxes),
-                new BayerThread(cashboxes)
-        )
-                .map(Thread::new)
-                .peek(Thread::start)
+        // вариант 1 через ExecutorService
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        List<Future<?>> futures = Stream.of(
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes),
+                        new BayerThread(cashboxes)
+                ).map(executorService::submit)
                 .collect(Collectors.toList());
 
-        for (Thread thread : threads) {
-            thread.join();
-        }
-        
-        
+        executorService.shutdown();
+
+        System.out.println(futures.get(0));
+
+        // вариант 2 через Thread
+//        List<Thread> threads = Stream.of(
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes),
+//                        new BayerThread(cashboxes)
+//                )
+//                .map(Thread::new)
+//                .peek(Thread::start)
+//                .collect(Collectors.toList());
+//
+//        for (Thread thread : threads) {
+//            thread.join();
+//        }
+
+
     }
 }
